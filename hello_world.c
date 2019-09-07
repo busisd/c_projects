@@ -1,12 +1,9 @@
 #include <stdio.h>
 #include <string.h> //needed for strlen
 
-void test() {
-	//Note: 125 octal = 85 decimal = 'U' in ASCII
-	printf("\125 \n");
-}
+void test();
 
-
+//Note: void main() worked just as well.
 int main() {
 	//comment 1
 	/* comment 2 */
@@ -32,10 +29,13 @@ int main() {
 	printf("%d ", a >> 2);
 	printf("%d \n\n", a >> 3);
 	
-	char *pointer_test = "THIS IS A STRING";
-	puts(pointer_test);
-	printf("%c", pointer_test[3]);
+	char string_test[20] = "THIS IS A STRING";
+	printf("%s\n", string_test);
+	printf("%c\n", string_test[3]);
 	printf("\n");
+	
+	char char_array[] = "HELLO THERE!";
+	puts(char_array);
 	
 	for (char i=65; i<91; i++) {
 		putchar(i);
@@ -52,13 +52,17 @@ int main() {
 	return 0;
 }
 
+void test() {
+	//Note: 125 octal = 85 decimal = 'U' in ASCII
+	printf("\125 \n");
+}
 
-
-/*The only four variable typse in C are:
+/*The only four primitive types in C are:
 char
 int
 float
 double
 (and void)
+also, pointers
 */
 
