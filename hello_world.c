@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h> //needed for strlen
 
 void test() {
 	//Note: 125 octal = 85 decimal = 'U' in ASCII
@@ -11,8 +12,9 @@ int main() {
 	/* comment 2 */
 	const char NEWLINE = '\n';
 		
-	printf("Enter a character:\n");
-	int c = getchar();
+	//printf("Enter a character:\n");
+	//int c = getchar();
+	int c = 80;
 	putchar(c);
 	
 	printf("\nYou entered: %c.", c); //Note: the char is not printed directly, string formatting is used
@@ -35,6 +37,18 @@ int main() {
 	printf("%c", pointer_test[3]);
 	printf("\n");
 	
+	for (char i=65; i<91; i++) {
+		putchar(i);
+	}
+	printf("\n");
+	printf("%lu\n", sizeof("Weird"));
+	// sizeof a string seems to always be its length +1
+	printf("%lu\n", strlen("Weird"));
+	// strlen returns the right length
+	
+	
+	
+	printf("\n");
 	return 0;
 }
 
